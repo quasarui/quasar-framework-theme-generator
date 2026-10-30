@@ -30,6 +30,8 @@
   --paper: #f8fafc;
   --sky: #0ea5e9;
   --sky-deep: #0369a1;
+  --sky-light: #7dd3fc;
+  --on-dark: #cbd5e1;
   --radius: 14px;
   color-scheme: light;
 }
@@ -71,7 +73,7 @@ code {
 .brand span b { color: var(--sky); font-weight: 700; }
 .brand img { border-radius: 6px; }
 .top nav { display: flex; gap: 20px; }
-.top nav a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; }
+.top nav a { color: var(--on-dark); text-decoration: none; font-size: 0.95rem; }
 .top nav a:hover { color: #fff; }
 
 .hero {
@@ -88,7 +90,7 @@ code {
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #7dd3fc;
+  color: var(--sky-light);
   margin-bottom: 14px;
 }
 h1 {
@@ -97,7 +99,7 @@ h1 {
   letter-spacing: -0.03em;
   margin: 0 0 20px;
 }
-.lede { font-size: 1.15rem; color: #cbd5e1; margin: 0 0 32px; }
+.lede { font-size: 1.15rem; color: var(--on-dark); margin: 0 0 32px; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn {
   display: inline-flex;
@@ -114,7 +116,7 @@ h1 {
 .btn-primary:hover { background: #38bdf8; }
 .btn-ghost { color: #fff; border: 1px solid rgb(255 255 255 / 0.25); }
 .btn-ghost:hover { background: rgb(255 255 255 / 0.08); }
-.btn:focus-visible, a:focus-visible { outline: 3px solid #7dd3fc; outline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--sky-light); outline-offset: 3px; }
 
 .shot {
   margin: 56px 0 0;
@@ -143,10 +145,10 @@ h2 {
   padding: 0;
   margin: 0;
 }
-.features li {
+.features li, .setup article {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 22px;
+  padding: 24px;
   background: #fff;
 }
 .features h3 { margin: 0 0 6px; font-size: 1.05rem; }
@@ -159,6 +161,13 @@ h2 {
   margin-bottom: 14px;
   background: var(--sky);
 }
+.features li:nth-child(1) .dot { background: #22c55e; }
+.features li:nth-child(2) .dot { background: #3b82f6; }
+.features li:nth-child(3) .dot { background: #6366f1; }
+.features li:nth-child(4) .dot { background: #f97316; }
+.features li:nth-child(5) .dot { background: #ec4899; }
+.features li:nth-child(6) .dot { background: #14b8a6; }
+.features li:nth-child(7) .dot { background: #eab308; }
 
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .gallery figure { margin: 0; }
@@ -173,13 +182,7 @@ h2 {
 .gallery .wide { grid-column: 1 / -1; }
 
 .setup { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.setup article {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px;
-  background: #fff;
-  min-width: 0;
-}
+.setup article { min-width: 0; }
 .setup h3 { margin: 0 0 12px; }
 .setup ol { margin: 0; padding-left: 1.2rem; color: var(--ink-soft); }
 .setup li + li { margin-top: 8px; }
@@ -190,7 +193,7 @@ h2 {
   color: #fff;
   text-align: center;
 }
-.cta p { color: #cbd5e1; max-width: 640px; margin: 0 auto 28px; }
+.cta p { color: var(--on-dark); max-width: 640px; margin: 0 auto 28px; }
 .cta .actions { justify-content: center; }
 .credit { margin-top: 36px; font-size: 0.92rem; }
 .credit a, .cta .credit { color: #94a3b8; }
@@ -200,7 +203,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 footer a { color: var(--muted); }
 
 @media (max-width: 760px) {
-  .top nav { display: none; }
+  .top nav .wide-only { display: none; }
   .hero-copy { padding-top: 28px; }
   .hero { padding-bottom: 48px; }
   .shot { margin-top: 36px; }
@@ -223,8 +226,8 @@ footer a { color: var(--muted); }
         <span>Quasar<b>UI</b></span>
       </a>
       <nav aria-label="QuasarUI">
-        <a href="https://www.quasarui.com/components">Components</a>
-        <a href="https://www.quasarui.com/documentation/theming">Theming docs</a>
+        <a class="wide-only" href="https://www.quasarui.com/components">Components</a>
+        <a class="wide-only" href="https://www.quasarui.com/documentation/theming">Theming docs</a>
         <a href="https://www.quasarui.com/tools/theme-builder">Theme Builder</a>
       </nav>
     </div>
@@ -235,7 +238,7 @@ footer a { color: var(--muted); }
       <p class="lede">The free Quasar Theme Builder designs your whole theme in the browser. Start from a preset, build a Quasar color palette, set fonts, icons, radius and component defaults, and check your Quasar dark mode theme on real components. Then export the files for Quasar CLI or Nuxt.</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://www.quasarui.com/tools/theme-builder">Open the Theme Builder <span aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="https://www.quasarui.com/documentation/theming">Read the theming docs</a>
+        <a class="btn btn-ghost" href="#use-the-theme">How to use the export</a>
       </div>
     </div>
 
@@ -253,14 +256,14 @@ footer a { color: var(--muted); }
       <h2>Everything a Quasar theme needs</h2>
       <p class="sub">Every change shows up at once on real Quasar components, in light and dark mode.</p>
       <ul class="features">
-        <li><span class="dot" style="background:#22c55e"></span><h3>12 presets</h3><p>Default, Mono, Cobalt, Sky, Mint, Iris, Crimson, Coral, Sunset, Carbon, Bubblegum and Parchment.</p></li>
-        <li><span class="dot" style="background:#3b82f6"></span><h3>Quasar color palette</h3><p>Primary, secondary, accent, positive, negative, info, warning and a neutral scale, from a Tailwind palette, shade by shade, or with OKLCH curves.</p></li>
-        <li><span class="dot" style="background:#6366f1"></span><h3>Dark mode theme</h3><p>Light and dark each get their own surface, text and border tokens. Preview either one, or follow the system.</p></li>
-        <li><span class="dot" style="background:#f97316"></span><h3>Fonts</h3><p>Body, heading and code fonts, with size, letter spacing, line height and weights.</p></li>
-        <li><span class="dot" style="background:#ec4899"></span><h3>12 icon sets</h3><p>Material Symbols, Material Icons, Material Design Icons, Font Awesome, Bootstrap Icons, Ionicons and more.</p></li>
-        <li><span class="dot" style="background:#14b8a6"></span><h3>Radius and defaults</h3><p>One radius for the whole app, plus default size and button, card and input variants.</p></li>
-        <li><span class="dot" style="background:#eab308"></span><h3>Three preview views</h3><p>Components, Dashboard and Landing. Undo, redo, a random theme and reset are one click away.</p></li>
-        <li><span class="dot" style="background:#0ea5e9"></span><h3>Share and export</h3><p>Copy a share link that reopens your theme, or export the files for Quasar CLI or Nuxt.</p></li>
+        <li><span class="dot"></span><h3>12 presets</h3><p>Default, Mono, Cobalt, Sky, Mint, Iris, Crimson, Coral, Sunset, Carbon, Bubblegum and Parchment.</p></li>
+        <li><span class="dot"></span><h3>Quasar color palette</h3><p>Primary, secondary, accent, positive, negative, info, warning and a neutral scale, from a Tailwind palette, shade by shade, or with OKLCH curves.</p></li>
+        <li><span class="dot"></span><h3>Dark mode theme</h3><p>Light and dark each get their own surface, text and border tokens. Preview either one, or follow the system.</p></li>
+        <li><span class="dot"></span><h3>Fonts</h3><p>Body, heading and code fonts, with size, letter spacing, line height and weights.</p></li>
+        <li><span class="dot"></span><h3>12 icon sets</h3><p>Material Symbols, Material Icons, Material Design Icons, Font Awesome, Bootstrap Icons, Ionicons and more.</p></li>
+        <li><span class="dot"></span><h3>Radius and defaults</h3><p>One radius for the whole app, plus default size and button, card and input variants.</p></li>
+        <li><span class="dot"></span><h3>Three preview views</h3><p>Components, Dashboard and Landing. Undo, redo, a random theme and reset are one click away.</p></li>
+        <li><span class="dot"></span><h3>Share and export</h3><p>Copy a share link that reopens your theme, or export the files for Quasar CLI or Nuxt.</p></li>
       </ul>
     </div>
   </section>
@@ -286,7 +289,7 @@ footer a { color: var(--muted); }
     </div>
   </section>
 
-  <section>
+  <section id="use-the-theme">
     <div class="wrap">
       <h2>Use the exported theme</h2>
       <p class="sub">Click Export in the Theme Builder and pick your project type. Full steps are in the <a href="https://www.quasarui.com/documentation/theming">QuasarUI theming docs</a>.</p>

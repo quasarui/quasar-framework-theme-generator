@@ -1,6 +1,6 @@
 # Repo setup (for the owner)
 
-Steps to publish this repo. Nothing here has been pushed.
+Steps to publish this repo.
 
 ## 1. Create and push
 
