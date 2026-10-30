@@ -28,4 +28,4 @@ The page is served at https://quasarui.github.io/quasar-theme-generator/. The ca
 ## 4. After it is live
 
 - Paste the Pages URL into https://www.opengraph.xyz/ (or the LinkedIn Post Inspector) to check the preview card.
-- Link to the repo from somewhere on quasarui.com (for example the Theme Builder or the theming docs) so search engines find it.
+- Link to the repo from somewhere on quasarui.com (for example the Theme Generator or the theming docs) so search engines find it.
