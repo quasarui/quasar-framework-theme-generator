@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quasar Theme Generator: free Quasar Theme Builder by QuasarUI</title>
+<meta name="description" content="Free Quasar theme generator. Build a Quasar color palette, fonts, icons and a dark mode theme with live preview, then export it for Quasar CLI or Nuxt.">
+<link rel="canonical" href="https://quasarui.github.io/quasar-theme-generator/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0f172a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuasarUI">
+<meta property="og:title" content="Quasar Theme Generator: free Quasar Theme Builder">
+<meta property="og:description" content="Design a Quasar theme with live preview: color palette, fonts, icons, radius and dark mode. Export for Quasar CLI or Nuxt.">
+<meta property="og:url" content="https://quasarui.github.io/quasar-theme-generator/">
+<meta property="og:image" content="https://quasarui.github.io/quasar-theme-generator/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quasar Theme Builder with the Iris preset in dark mode">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quasar Theme Generator: free Quasar Theme Builder">
+<meta name="twitter:description" content="Design a Quasar theme with live preview: color palette, fonts, icons, radius and dark mode. Export for Quasar CLI or Nuxt.">
+<meta name="twitter:image" content="https://quasarui.github.io/quasar-theme-generator/assets/og-image.png">
+<style>
+:root {
+  --ink: #0f172a;
+  --ink-soft: #334155;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --paper: #f8fafc;
+  --sky: #0ea5e9;
+  --sky-deep: #0369a1;
+  --radius: 14px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: #fff;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--sky-deep); }
+code {
+  font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: #f1f5f9;
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+  overflow-wrap: anywhere;
+}
+.wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+.brand span b { color: var(--sky); font-weight: 700; }
+.brand img { border-radius: 6px; }
+.top nav { display: flex; gap: 20px; }
+.top nav a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; }
+.top nav a:hover { color: #fff; }
+
+.hero {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgb(14 165 233 / 0.28), transparent 60%),
+    radial-gradient(40rem 24rem at 0% 0%, rgb(99 102 241 / 0.18), transparent 60%),
+    var(--ink);
+  color: #fff;
+  padding-bottom: 72px;
+}
+.hero-copy { max-width: 760px; padding-top: 56px; }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7dd3fc;
+  margin-bottom: 14px;
+}
+h1 {
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+}
+.lede { font-size: 1.15rem; color: #cbd5e1; margin: 0 0 32px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--sky); color: var(--ink); }
+.btn-primary:hover { background: #38bdf8; }
+.btn-ghost { color: #fff; border: 1px solid rgb(255 255 255 / 0.25); }
+.btn-ghost:hover { background: rgb(255 255 255 / 0.08); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid #7dd3fc; outline-offset: 3px; }
+
+.shot {
+  margin: 56px 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  box-shadow: 0 30px 80px -20px rgb(0 0 0 / 0.6);
+}
+.shot a { display: block; }
+
+section { padding: 80px 0; }
+section.alt { background: var(--paper); border-block: 1px solid var(--line); }
+h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+.sub { color: var(--muted); margin: 0 0 40px; max-width: 680px; }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.features li {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: #fff;
+}
+.features h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.features p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+.dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-bottom: 14px;
+  background: var(--sky);
+}
+
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.gallery figure { margin: 0; }
+.gallery figure > a {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 30px -16px rgb(15 23 42 / 0.35);
+}
+.gallery figcaption { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+.gallery .wide { grid-column: 1 / -1; }
+
+.setup { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.setup article {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  background: #fff;
+  min-width: 0;
+}
+.setup h3 { margin: 0 0 12px; }
+.setup ol { margin: 0; padding-left: 1.2rem; color: var(--ink-soft); }
+.setup li + li { margin-top: 8px; }
+.note { margin: 24px 0 0; color: var(--ink-soft); }
+
+.cta {
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+}
+.cta p { color: #cbd5e1; max-width: 640px; margin: 0 auto 28px; }
+.cta .actions { justify-content: center; }
+.credit { margin-top: 36px; font-size: 0.92rem; }
+.credit a, .cta .credit { color: #94a3b8; }
+
+footer { padding: 28px 0; color: var(--muted); font-size: 0.9rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+footer a { color: var(--muted); }
+
+@media (max-width: 760px) {
+  .top nav { display: none; }
+  .hero-copy { padding-top: 28px; }
+  .hero { padding-bottom: 48px; }
+  .shot { margin-top: 36px; }
+  section { padding: 56px 0; }
+  .gallery, .setup { grid-template-columns: 1fr; }
+  .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+  .btn:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="https://www.quasarui.com">
+        <img src="assets/favicon.svg" alt="" width="30" height="30">
+        <span>Quasar<b>UI</b></span>
+      </a>
+      <nav aria-label="QuasarUI">
+        <a href="https://www.quasarui.com/components">Components</a>
+        <a href="https://www.quasarui.com/documentation/theming">Theming docs</a>
+        <a href="https://www.quasarui.com/tools/theme-builder">Theme Builder</a>
+      </nav>
+    </div>
+
+    <div class="hero-copy">
+      <span class="eyebrow">Free tool for Quasar and Nuxt</span>
+      <h1>Quasar Theme Generator</h1>
+      <p class="lede">The free Quasar Theme Builder designs your whole theme in the browser. Start from a preset, build a Quasar color palette, set fonts, icons, radius and component defaults, and check your Quasar dark mode theme on real components. Then export the files for Quasar CLI or Nuxt.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.quasarui.com/tools/theme-builder">Open the Theme Builder <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="https://www.quasarui.com/documentation/theming">Read the theming docs</a>
+      </div>
+    </div>
+
+    <figure class="shot">
+      <a href="https://www.quasarui.com/tools/theme-builder">
+        <img src="assets/theme-builder-components.png" width="1440" height="868" alt="The Quasar Theme Builder with the Default preset in light mode, previewing forms, a calendar, notifications and charts">
+      </a>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>Everything a Quasar theme needs</h2>
+      <p class="sub">Every change shows up at once on real Quasar components, in light and dark mode.</p>
+      <ul class="features">
+        <li><span class="dot" style="background:#22c55e"></span><h3>12 presets</h3><p>Default, Mono, Cobalt, Sky, Mint, Iris, Crimson, Coral, Sunset, Carbon, Bubblegum and Parchment.</p></li>
+        <li><span class="dot" style="background:#3b82f6"></span><h3>Quasar color palette</h3><p>Primary, secondary, accent, positive, negative, info, warning and a neutral scale, from a Tailwind palette, shade by shade, or with OKLCH curves.</p></li>
+        <li><span class="dot" style="background:#6366f1"></span><h3>Dark mode theme</h3><p>Light and dark each get their own surface, text and border tokens. Preview either one, or follow the system.</p></li>
+        <li><span class="dot" style="background:#f97316"></span><h3>Fonts</h3><p>Body, heading and code fonts, with size, letter spacing, line height and weights.</p></li>
+        <li><span class="dot" style="background:#ec4899"></span><h3>12 icon sets</h3><p>Material Symbols, Material Icons, Material Design Icons, Font Awesome, Bootstrap Icons, Ionicons and more.</p></li>
+        <li><span class="dot" style="background:#14b8a6"></span><h3>Radius and defaults</h3><p>One radius for the whole app, plus default size and button, card and input variants.</p></li>
+        <li><span class="dot" style="background:#eab308"></span><h3>Three preview views</h3><p>Components, Dashboard and Landing. Undo, redo, a random theme and reset are one click away.</p></li>
+        <li><span class="dot" style="background:#0ea5e9"></span><h3>Share and export</h3><p>Copy a share link that reopens your theme, or export the files for Quasar CLI or Nuxt.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>See your theme on real screens</h2>
+      <p class="sub">Switch between a component gallery, an admin dashboard and a marketing landing page.</p>
+      <div class="gallery">
+        <figure>
+          <a href="https://www.quasarui.com/tools/theme-builder"><img src="assets/theme-builder-dashboard-dark.png" width="1440" height="868" loading="lazy" alt="Theme Builder dashboard preview in the Cobalt preset, dark mode"></a>
+          <figcaption>Dashboard view, Cobalt preset, dark mode.</figcaption>
+        </figure>
+        <figure>
+          <a href="https://www.quasarui.com/tools/theme-builder"><img src="assets/theme-builder-landing.png" width="1440" height="868" loading="lazy" alt="Theme Builder landing page preview in the Sunset preset"></a>
+          <figcaption>Landing view, Sunset preset.</figcaption>
+        </figure>
+        <figure class="wide">
+          <a href="https://www.quasarui.com/tools/theme-builder"><img src="assets/theme-builder-export.png" width="1440" height="868" loading="lazy" alt="The Export dialog with the Nuxt files: quasar-theme.css, nuxt.config.ts and quasar.variables.scss"></a>
+          <figcaption>Export for Nuxt or Quasar CLI, with a share link for the theme.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Use the exported theme</h2>
+      <p class="sub">Click Export in the Theme Builder and pick your project type. Full steps are in the <a href="https://www.quasarui.com/documentation/theming">QuasarUI theming docs</a>.</p>
+      <div class="setup">
+        <article>
+          <h3>Quasar CLI</h3>
+          <ol>
+            <li>Save <code>src/css/quasar-theme.css</code>, <code>src/boot/theme-defaults.js</code> and <code>src/css/quasar.variables.scss</code> into your project.</li>
+            <li>Merge the keys from the exported <code>quasar.config.js</code> (<code>boot</code>, <code>css</code>, <code>extras</code> and <code>framework</code>) into your own config.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Nuxt (nuxt-quasar-ui)</h3>
+          <ol>
+            <li>Save <code>assets/css/quasar-theme.css</code> and <code>assets/quasar.variables.scss</code> into your project.</li>
+            <li>Merge the keys from the exported <code>nuxt.config.ts</code> (<code>modules</code>, <code>css</code> and <code>quasar</code>) into your own config.</li>
+            <li>Install <code>sass</code> for the Sass variables: <code>npm install -D sass</code>.</li>
+          </ol>
+        </article>
+      </div>
+      <p class="note">The CSS file owns dark mode, so keep <code>dark: "auto"</code> (or your own toggle) in the Quasar config.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Make your Quasar app yours</h2>
+      <p>Free, in the browser, with a live preview of every change.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.quasarui.com/tools/theme-builder">Open the Theme Builder <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="credit">The Theme Builder is a port of the <a href="https://ui.nuxt.com/theme">Nuxt UI Theme Studio</a> to Quasar. Its palette engine, curve editor and preset designs are adapted from Nuxt UI (MIT).</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Made by <a href="https://www.quasarui.com">QuasarUI</a>: Quasar components, blocks and templates for Vue and Nuxt.</span>
+    <a href="https://github.com/quasarui/quasar-theme-generator">Source on GitHub</a>
+  </div>
+</footer>
+</body>
+</html>
