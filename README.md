@@ -1,10 +1,10 @@
-# Quasar Theme Generator
+# Quasar Framework Theme Generator
 
-Looking for a Quasar theme generator? The free [Quasar Theme Generator](https://www.quasarui.com/tools/theme-builder) on QuasarUI designs a complete theme for the [Quasar Framework](https://quasar.dev): pick a preset, build your Quasar color palette from a Tailwind palette or OKLCH curves, set fonts, icons, radius and component defaults, check the Quasar dark mode theme next to the light one on real components, then export ready-to-use files for Quasar CLI or Nuxt.
+Looking for a Quasar Framework Theme Generator? The free [Quasar Framework Theme Generator](https://www.quasarui.com/tools/theme-builder) on QuasarUI designs a complete theme for the [Quasar Framework](https://quasar.dev): pick a preset, build your Quasar color palette from a Tailwind palette or OKLCH curves, set fonts, icons, radius and component defaults, check the Quasar dark mode theme next to the light one on real components, then export ready-to-use files for Quasar CLI or Nuxt.
 
 **[Open the Theme Generator →](https://www.quasarui.com/tools/theme-builder)**
 
-![The Quasar Theme Generator with the Default preset in light mode, previewing forms, a calendar, notifications and charts](assets/theme-builder-components.png)
+![The Quasar Framework Theme Generator with the Default preset in light mode, previewing forms, a calendar, notifications and charts](assets/theme-builder-components.png)
 
 > This repository is the landing page for the Theme Generator. The builder itself runs on [quasarui.com](https://www.quasarui.com/tools/theme-builder); there is no code to install here.
 

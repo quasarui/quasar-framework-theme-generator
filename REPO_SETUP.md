@@ -13,7 +13,7 @@ git push -u origin main
 
 ## 2. About box
 
-- **Description:** Free Quasar theme generator: build a Quasar color palette, fonts, icons and dark mode theme with live preview, export for Quasar CLI or Nuxt.
+- **Description:** Free Quasar Framework Theme Generator: build a Quasar color palette, fonts, icons and dark mode theme with live preview, export for Quasar CLI or Nuxt.
 - **Website:** https://www.quasarui.com/tools/theme-builder
 - **Topics:** `quasar`, `quasar-framework`, `quasar-theme`, `theme-generator`, `theme-builder`, `color-palette`, `dark-mode`, `vue`, `vuejs`, `nuxt`, `css-variables`, `design-tokens`, `quasarui`
 
